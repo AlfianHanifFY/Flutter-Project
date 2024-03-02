@@ -3,6 +3,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app/screen/inputPage.dart';
+import 'package:flutter_app/screen/orderList.dart';
+import 'package:get/route_manager.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -44,7 +47,20 @@ class _HomePageState extends State<HomePage> {
                   height: (MediaQuery.of(context).size.height - (56 + 80 + 30)),
                   color: Color.fromARGB(255, 78, 233, 122),
                   child: Column(
-                    children: [Text('halo')],
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Get.to(InputData());
+                        },
+                        child: Text('Input Data'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.to(OrderList());
+                        },
+                        child: Text('Order List'),
+                      ),
+                    ],
                   ),
                 ),
               ),
