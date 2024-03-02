@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app/screen/homePage.dart';
+import 'package:get/route_manager.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -46,7 +48,7 @@ class _LoginState extends State<Login> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // Perform action on button press
+                    Get.to(HomePage());
                   },
                   child: Text('Login'),
                   style: ButtonStyle(
