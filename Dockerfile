@@ -9,8 +9,10 @@ RUN apt-get update \
     && docker-php-ext-install pdo pdo_pgsql 
 
 
+
 # Set the working directory to /var/www/html
 WORKDIR /var/www/html
 
 # Copy the PHP code file in /app into the container at /var/www/html
 COPY ../app .
+COPY cors.conf /etc/apache2/conf-available/cors.conf

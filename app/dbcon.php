@@ -1,4 +1,6 @@
 <?php
+
+
 $host = 'postgres';
 $user = 'db_user';
 $pass = 'db_password';
