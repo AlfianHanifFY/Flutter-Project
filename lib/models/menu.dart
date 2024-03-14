@@ -1,16 +1,14 @@
-import 'dart:ffi';
-
 class Menu {
   String name;
-  Int id;
-  Int price;
+  double id;
+  double price;
 
   Menu(this.name, this.id, this.price);
 
   Menu.fromJson(Map<String, dynamic> json)
       : name = json['name'] as String,
-        price = json['price'] as Int,
-        id = json['id'] as Int;
+        price = json['price'] as double,
+        id = json['id'] as double;
 
   Map<String, dynamic> toJson() => {
         'name': name,

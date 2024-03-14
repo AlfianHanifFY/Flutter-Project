@@ -1,9 +1,7 @@
 import 'dart:convert';
+import 'package:flutter_app/models/menu.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screen/homePage.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/route_manager.dart';
 import 'dart:async';
 
 class InputData extends StatefulWidget {
@@ -28,12 +26,15 @@ class _InputDataState extends State<InputData> {
   }
 
   Future<void> submitForm() async {
-    Map<String, dynamic> data = {
-      'id': double.parse(idController.text),
-      'name': nameController.text,
-      'price': double.parse(priceController.text),
-      'param': 'insert',
-    };
+    double id = double.parse(idController.text);
+    String name = nameController.text;
+    double price = double.parse(priceController.text);
+    String param = 'insert';
+
+    Menu newMenu = Menu(name, id, price);
+
+    Map<String, dynamic> data = newMenu.toJson();
+    data['param'] = param;
 
     String jsonData = jsonEncode(data);
 

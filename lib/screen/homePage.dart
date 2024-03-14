@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/screen/inputPage.dart';
+import 'package:flutter_app/screen/listPage.dart';
 import 'package:flutter_app/screen/orderList.dart';
 import 'package:get/route_manager.dart';
 
@@ -59,6 +60,12 @@ class _HomePageState extends State<HomePage> {
                           Get.to(OrderList());
                         },
                         child: Text('Order List'),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.to(ListPage());
+                        },
+                        child: Text('Menu List'),
                       ),
                     ],
                   ),
