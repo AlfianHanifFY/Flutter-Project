@@ -1,10 +1,5 @@
 <?php
-
-
-
 require('dbcon.php');
-
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = json_decode(file_get_contents('php://input'), true);
@@ -13,14 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($param == "insert") {
         try { 
             $name = $data["name"];
-            $id = $data["id"];
             $price = $data["price"];
 
-            $sql = "INSERT INTO t_menu(name,price,id) VALUES (:name, :price,:id)";
+            $sql = "INSERT INTO t_menu(name,price) VALUES (:name, :price)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':name', $name);
             $stmt->bindParam(':price', $price);
-            $stmt->bindParam(':id', $id);
             $stmt->execute();
     
             echo "New record created successfully";

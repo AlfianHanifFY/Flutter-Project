@@ -14,24 +14,21 @@ class InputData extends StatefulWidget {
 class _InputDataState extends State<InputData> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
-  final TextEditingController idController = TextEditingController();
   String result = '';
 
   @override
   void dispose() {
     nameController.dispose();
-    idController.dispose();
     priceController.dispose();
     super.dispose();
   }
 
   Future<void> submitForm() async {
-    double id = double.parse(idController.text);
     String name = nameController.text;
     double price = double.parse(priceController.text);
     String param = 'insert';
 
-    Menu newMenu = Menu(name, id, price);
+    Menu newMenu = Menu(name, price);
 
     Map<String, dynamic> data = newMenu.toJson();
     data['param'] = param;
@@ -75,16 +72,6 @@ class _InputDataState extends State<InputData> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              TextField(
-                controller: idController,
-                decoration: InputDecoration(
-                  labelText: 'id',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  prefixIcon: Icon(Icons.person),
-                ),
-              ),
               Text(''),
               TextField(
                 controller: nameController,
