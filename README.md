@@ -1,6 +1,7 @@
 # flutter_app
 
-A new Flutter project.
+Flutter project. Flutter --- PHP --- Postgres.
+Belom beres :)
 
 ## Getting Started
 
