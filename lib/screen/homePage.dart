@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app/screen/inputPage.dart';
 import 'package:flutter_app/screen/listPage.dart';
-import 'package:flutter_app/screen/orderList.dart';
+import 'package:flutter_app/screen/orderPage.dart';
 import 'package:get/route_manager.dart';
 
 class HomePage extends StatefulWidget {
@@ -57,9 +57,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.to(OrderList());
+                          Get.to(orderPage());
                         },
-                        child: Text('Order List'),
+                        child: Text('Order'),
                       ),
                       TextButton(
                         onPressed: () {
